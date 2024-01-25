@@ -1,0 +1,36 @@
+/* CSS Document */
+/* Author: Josh Story */
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ddd;
+  overflow-x: hidden;
+  background: url("../img/bg.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  margin: 0px;
+  padding: 0rem;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 25rem;
+}
+
+p {
+  font-size: 2rem;
+}
