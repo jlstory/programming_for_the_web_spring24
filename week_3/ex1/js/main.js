@@ -31,7 +31,7 @@ function createTile() {
     circle(200, 0, 100);
     circle(0, 200, 100);
     circle(200, 200, 100);
-}
+};
 
 function draw() {
      createTile();
