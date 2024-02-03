@@ -5,7 +5,6 @@ let responseColor = 'green';
 let heading;
 let w = window.innerWidth;
 let h = window.innerHeight;
-let img;
 let errorCount = 0;
 
 // The Riddler's Riddles
