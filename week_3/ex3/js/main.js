@@ -8,9 +8,6 @@ let h = window.innerHeight;
 let img;
 let errorCount = 0;
 
-function preload() {
-    img = loadImage('../img/riddler.png');
-}
 // The Riddler's Riddles
 let myQuestions = [
 {
@@ -114,7 +111,6 @@ function draw() {
     text(response, (w / 2) - 160, 300);
     fill('limegreen');
     imageMode(CENTER);
-    image(img, 1200, 600);
     text('Incorrect Answers: ' + errorCount + '/5', (w / 2) - 125, 610, 250);
 }
 

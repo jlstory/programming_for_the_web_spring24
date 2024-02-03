@@ -36,3 +36,9 @@ input {
   color: indigo;
   font-weight: bold;
 }
+
+.riddler {
+  position: absolute;
+  bottom: 5rem;
+  right: 10rem;
+}
