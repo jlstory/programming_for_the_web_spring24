@@ -71,14 +71,14 @@ function hint() {
     response = 'HA, HA, HA! The answer is ' + currentQuestion.answer + '.';
     responseColor = 'white';
 }
-
+//next Question
 currentQuestion = next();
 let message = currentQuestion.question;
-
+// Reset Wrong Answer Count
 function resetCounter() {
     errorCount = 0;
 }
-
+// setup canvas
 function setup() {
     createCanvas(w, h);
     heading = createElement('h1', ['Riddle Me This Quiz']);
@@ -99,6 +99,7 @@ function setup() {
     resetButton.position((w / 2) - 160, 650);
     resetButton.mousePressed(resetCounter);
 };
+//Draw
 function draw() {
     background('indigo');
     fill('white');
