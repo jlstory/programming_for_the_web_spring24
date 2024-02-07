@@ -98,7 +98,7 @@ function setup() {
     resetButton.size(320, 36);
     resetButton.position((w / 2) - 160, 650);
     resetButton.mousePressed(resetCounter);
-};
+}
 //Draw
 function draw() {
     background('indigo');
