@@ -32,7 +32,7 @@ function setup() {
     createCanvas(1600, 900);
     background(0, 0, 0, 0);
 }
-
+// Draw Loop --- Cards
 function draw() {
     noLoop();
     for(let i = 0; i < myCardsArray.length; i++)
