@@ -209,5 +209,6 @@ function shuffleArray (cardFaceArray) {
 function backgroundMusic() {
     sounds[0].play();
     sounds[0].loop();
+    // trigger background music when user begins interaction
     userStartAudio();
 }
