@@ -20,7 +20,9 @@ let cardBack;
 let fontRegular;
 let sounds;
 function preload() {
+    // load font
     fontRegular = loadFont('fonts/JungleAdventurer.ttf');
+    // load card faces and back
     cardBack = loadImage('img/cardBack.png');
     cardFaceArray = [
         loadImage('img/cardOne.png'),
@@ -33,6 +35,7 @@ function preload() {
         loadImage('img/CardEight.png'),
         loadImage('img/cardNine.png')
     ]
+    // load sounds
     soundFormats('wav');
     sounds = [
         loadSound('sounds/bg.wav'),
