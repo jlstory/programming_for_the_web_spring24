@@ -94,7 +94,6 @@ function draw() {
         sounds[4].play();
         noLoop();
         noStroke();
-        window.confirm('Play Again?');
     }
     for (let a = 0; a < cards.length; a++) {
         if (!cards[a].isMatch) {
