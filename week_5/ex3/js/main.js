@@ -20,26 +20,26 @@ let cardBack;
 let fontRegular;
 let sounds;
 function preload() {
-    fontRegular = loadFont('../fonts/JungleAdventurer.ttf');
-    cardBack = loadImage('../img/cardBack.png');
+    fontRegular = loadFont('fonts/JungleAdventurer.ttf');
+    cardBack = loadImage('img/cardBack.png');
     cardFaceArray = [
-        loadImage('../img/cardOne.png'),
-        loadImage('../img/cardTwo.png'),
-        loadImage('../img/cardThree.png'),
-        loadImage('../img/carFour.png'),
-        loadImage('../img/cardFive.png'),
-        loadImage('../img/cardSix.png'),
-        loadImage('../img/cardSeven.png'),
-        loadImage('../img/CardEight.png'),
-        loadImage('../img/cardNine.png')
+        loadImage('img/cardOne.png'),
+        loadImage('img/cardTwo.png'),
+        loadImage('img/cardThree.png'),
+        loadImage('img/carFour.png'),
+        loadImage('img/cardFive.png'),
+        loadImage('img/cardSix.png'),
+        loadImage('img/cardSeven.png'),
+        loadImage('img/CardEight.png'),
+        loadImage('img/cardNine.png')
     ]
     soundFormats('wav');
     sounds = [
-        loadSound('../sounds/bg.wav'),
-        loadSound('../sounds/flip.wav'),
-        loadSound('../sounds/nomatch.wav'),
-        loadSound('../sounds/match.wav'),
-        loadSound('../sounds/winner.wav')       
+        loadSound('sounds/bg.wav'),
+        loadSound('sounds/flip.wav'),
+        loadSound('sounds/nomatch.wav'),
+        loadSound('sounds/match.wav'),
+        loadSound('sounds/winner.wav')       
     ]
 }
 // Canvas
