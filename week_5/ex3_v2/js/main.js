@@ -117,7 +117,7 @@ function draw() {
     text('attempts:  ' + gameState.attempts + ' / 20', 250, 930);
     text('matches:  ' + gameState.numMatched + ' / 9', 250, 970);
     // Lose Game
-    if(gameState.attempts > 19) {
+    if(gameState.attempts > 19 && gameState.numMatched != gameState.totalPairs) {
         fill('orangered');
         stroke(255);
         strokeWeight(5);
@@ -136,7 +136,7 @@ function draw() {
             loop();
             window.clearTimeout(loopTimeout);
             window.location.reload();   
-            }, 4500)
+            }, 4000)
         noLoop();
         noStroke();
 
