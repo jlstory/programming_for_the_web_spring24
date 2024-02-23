@@ -1,0 +1,73 @@
+/* CSS Document */
+/* Author: Josh Story */
+@import url("https://use.typekit.net/ghb3tbc.css");
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+  --font-sans: "Roboto", "helvetica", sans-serif;
+
+  --color-pure_black: #000;
+  --color-black: #101010;
+  --color-dark_gray: #303030;
+  --color-gray: #404040;
+  --color-blue: #0289bf;
+  --color-blue_dark: #016699;
+  --color-blue_light: #46c8f5;
+  --color-pink: #e50eb9;
+  --color-purple: #9700ff;
+  --color-white: #fff;
+
+  --font-size-base: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 40px;
+
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1400px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #fff;
+  overflow-x: hidden;
+  background: #202020;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  margin: 0px;
+  padding: 0rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+  margin: 5rem auto;
+  color: var(--color-blue);
+}
+
+li {
+  margin-bottom: 1.1rem;
+  line-height: 1.9rem;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
