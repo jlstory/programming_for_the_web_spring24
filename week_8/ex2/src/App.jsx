@@ -1,34 +1,57 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import AnimalsComp from './AnimalsComp';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [headline, setHeadline] = useState("Some Pretty Cool Animals");
+  const [animals, setAnimals] = useState([    
+    "dogs",
+    "cats",
+    "turtles",
+    "birds",
+    "apes",
+    "butterflies",
+    "spiders",
+    "octopi",
+    "sloths",
+    "lizards",
+    "bunnies",
+    "chipmunks",
+    "otters",
+    "elephants",
+    "tigers",
+    "horses",
+    "zebras", 
+    "bees",
+    "orcas",
+    "dolphins",
+    "snakes", 
+    "lions",
+    "bears",
+    "llamas, I guess..."
+  ]);
+  function deleteAnimal(animalName) {
+    const updatedArray = animals.filter((animal) => {
+    return animal !== animalName;
+    });
+    setAnimals(updatedArray);
+  }
+  function focusAnimal (animalName) {
+    setHeadline(animalName);
+  }
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h1>{'the focus is on ' + headline + '!'}</h1>
+      {animals.map((myAnimal) => {
+        return <AnimalsComp 
+        key={myAnimal} 
+        animalName={myAnimal}
+        deleteFn={deleteAnimal}
+        focusFn={focusAnimal} />
+      })}
+   </div>
+   </>
   )
 }
 
