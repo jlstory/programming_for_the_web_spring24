@@ -41,7 +41,7 @@ export default function ItemCard({
         </div>
     )
 }
-ItemCard.PropTypes = {
+ItemCard.propTypes = {
     item: PropTypes.string,
     brand: PropTypes.string,
     price: PropTypes.string,
