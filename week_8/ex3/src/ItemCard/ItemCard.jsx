@@ -26,7 +26,8 @@ export default function ItemCard({
                 <p>price: {price}</p>
             </div>
             <div className="affordable">
-                <p>affordability: {affordable === true ? 'yes' : 'no'}</p>
+                <p style={{color: affordable ? "green" : "red"}}>
+                affordability: {affordable === true ? 'yes' : 'no'}</p>
             </div>
             <div className="actions">
                 <a href="#" onClick={(evt) => {
