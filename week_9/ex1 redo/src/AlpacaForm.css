@@ -1,0 +1,13 @@
+/* Form Styling */
+fieldset {
+  margin-bottom: 1em;
+}
+
+input[type="checkbox"] {
+  margin: 20px 10px 20px 30px;
+}
+
+input[type="text"],
+#state {
+  margin: 20px 0px 20px 10px;
+}
