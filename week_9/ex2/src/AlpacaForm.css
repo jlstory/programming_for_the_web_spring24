@@ -1,0 +1,44 @@
+/* Form Styling */
+fieldset {
+  margin-bottom: 1em;
+}
+
+input[type="checkbox"] {
+  margin: 20px 10px 20px 30px;
+}
+
+input[type="text"],
+#state {
+  margin: 20px 0px 20px 10px;
+  color: #101010;
+  background-color: darkgray;
+  font-size: 18px;
+  width: 25em;
+}
+
+label.required::before {
+  content: "* ";
+  color: red;
+}
+
+small {
+  color: red;
+}
+
+button {
+  color: gray !important;
+  border: 2px solid gray !important;
+  margin: 1em;
+}
+
+button:hover {
+  color: rgb(174, 174, 174) !important;
+  border: 2px solid rgb(174, 174, 174) !important;
+  margin: 1em;
+}
+
+button:active {
+  color: #202020 !important;
+  border: 2px solid #202020 !important;
+  background-color: rgb(174, 174, 174);
+}
