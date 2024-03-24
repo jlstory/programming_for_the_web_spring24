@@ -1,0 +1,22 @@
+.gear_form--wrapper {
+  border-radius: 20px;
+  border: 1px solid #303030;
+  padding: 1.2em;
+  color: #fff;
+  margin: 4rem auto 8rem;
+}
+
+legend {
+  font-size: 1.75em;
+}
+
+label {
+  color: #fff I !important;
+  font-size: 1.5em;
+}
+
+input {
+  color: #fff;
+  background-color: #404040;
+  outline: none;
+}
