@@ -5,10 +5,12 @@ export function GearForm() {
         item: "",
         brand: "",
         price: "",
-        affordable: false,
+        affordable: [],
         id: "" 
 
     }
+    const buttonState = Boolean(['true', 'false']);
+    if (buttonState.checked === "true" ? Boolean(true) : Boolean(false));
     const [newCard, setNewCard] = useState(initialCardSetting);
     function changeHandler(event) {
         setNewCard((prevCard) => {
@@ -59,17 +61,50 @@ export function GearForm() {
                             onChange={changeHandler}
                             />                
                 </div>
-                <div className="formGroup checkbox-group">
-                    <label htmlFor="affordable">Affordable?: </label>   
+                <div className="formGroup">
+                    <label htmlFor="affordable">Is it Affordable? </label>   
+                        <input 
+                            type="text" 
+                            name="affordable" 
+                            id="affordable"
+                            value={newCard.affordable}
+                            onChange={changeHandler}
+                            />                
+                </div>
+                <div className="formgroup">
+                    <label htmlFor="affordable">Is it Affordable? </label>
+                    <select 
+                        name="affordable" 
+                        id="affordable"
+                        value={newCard.affordable}
+                        onChange={changeHandler}
+                    >
+                        <option value="true">yes</option>
+                        <option value="false">no</option> 
+                    </select>  
+                </div>
+                <div className="formGroup">
+                    <label htmlFor="affordable">Is it Affordable? </label>   
+                        <input 
+                            type="radio" 
+                            name="affordable" 
+                            id="affordable"
+                            value={newCard.affordable}
+                            checked={buttonState}
+                            onChange={changeHandler}
+                            />                
+                </div>
+                {/* <div className="formGroup checkbox-group">
+                    <label htmlFor="affordable">Is it Affordable: </label>   
                         <input 
                             type="checkbox" 
                             name="affordable" 
                             id="affordable"
                             // value={newCard.affordable}
                             onChange={changeHandler}
-                            checked={newCard.affordable.true}
+                            checked={newCard.affordable === 'on' ? Boolean('on').valueOf(true) : Boolean(false)}
                             />                
-                </div>
+                </div> */}
             </fieldset>
             <button type="submit">Add Card</button>
         </form>
