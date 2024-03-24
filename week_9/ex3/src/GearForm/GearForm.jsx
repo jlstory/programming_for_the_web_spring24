@@ -1,16 +1,66 @@
 import { useState } from "react"
+import PropTypes from "prop-types";
 import "./GearForm.css"
-export function GearForm() {
+export function GearForm({ addCardFn }) {
     const initialCardSetting = {
         item: "",
         brand: "",
         price: "",
         affordable: [],
         id: "" 
-
     }
-    const buttonState = Boolean([Boolean('true'), Boolean('false')]);
+    // const [buttonState, setButtonState] = useState('true', 'false');
     const [newCard, setNewCard] = useState(initialCardSetting);
+    // error state variable
+    const [errorObj, setErrorObj] = useState({
+        item: "",
+        brand: "",
+        price: "",
+    });
+
+    // validate function
+ function validateForm(newCard) {
+        console.log("triggering validation", !!newCard.name)
+        let valid = true;
+        if(!newCard.name) {
+            console.log("setting error object")
+            //set error object tabi prop to error message
+            setErrorObj((prevErrorObj) => {
+                return {
+                    ...prevErrorObj,
+                    brand: "This field is required"
+                }
+            });
+            //return false;
+            valid = false;
+        }
+        if(!newCard.image) {
+            //set image prop to error message
+            setErrorObj((prevErrorObj) => {
+                return {
+                    ...prevErrorObj,
+                    item: "This field is required"
+                }
+            });
+            //return false;
+            valid = false;
+        }
+        if(!newCard.image) {
+            //set image prop to error message
+            setErrorObj((prevErrorObj) => {
+                return {
+                    ...prevErrorObj,
+                    price: "This field is required"
+                }
+            });
+            //return false;
+            valid = false;
+        }
+        
+        console.log(valid)
+        return valid;
+    }
+    
     function changeHandler(event) {
         setNewCard((prevCard) => {
             return {
@@ -21,46 +71,102 @@ export function GearForm() {
     }
     function submitHandler(event) {
         event.preventDefault();
-        console.log({newCard});
+        if (validateForm(newCard)) {
+            addCardFn(newCard);
+            console.log({newCard});
+            setNewCard({
+            ...initialCardSetting,
+        });
     }
     return (
         <form className="gear_form--wrapper" onSubmit={submitHandler}>
             <fieldset>
                 <legend>Gear Details</legend>
-                <div className="formGroup">
-                    <label htmlFor="brand">Brand / Logo URL: </label>   
+                <div className={{"form-group": true, "error": errorObj.brand}}>
+                    <label className="required" htmlFor="brand">Brand / Logo URL: </label>   
                         <input 
                             type="text" 
                             name="brand" 
                             id="brand"
                             value={newCard.brand}
                             onChange={changeHandler}
-                            />                
+                            onBlur={() => {
+                                if(newCard.brand) {
+                                    setErrorObj
+                                    ((prevErrorObj) => {
+                                        return {
+                                            ...prevErrorObj,
+                                            brand: ""
+                                        }
+                                    })
+                                }
+                            }}
+                    />
+                     {errorObj.name && (
+                        <>
+                        <br />
+                        <small className="errorFeedback">{errorObj.name}</small>
+                        </>
+                    )}             
                 </div>
-                <div className="formGroup">
-                    <label htmlFor="item">Product or Item: </label>   
+                <div className={{"form-group": true, "error": errorObj.item}}>
+                    <label className="required" htmlFor="item">Product or Item: </label>   
                         <input 
                             type="text" 
                             name="item" 
                             id="item"
                             value={newCard.item}
                             onChange={changeHandler}
-                            />                
+                            onBlur={() => {
+                                if(newCard.item) {
+                                    setErrorObj
+                                    ((prevErrorObj) => {
+                                        return {
+                                            ...prevErrorObj,
+                                            name: ""
+                                        }
+                                    })
+                                }
+                            }}
+                    />
+                     {errorObj.name && (
+                        <>
+                        <br />
+                        <small className="errorFeedback">{errorObj.name}</small>
+                        </>
+                    )}                       
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Additional Details</legend>
-                <div className="formGroup">
-                    <label htmlFor="price">Retail Price: </label>   
+                <div className={{"form-group": true, "error": errorObj.price}}>
+                    <label className="required" htmlFor="price">Retail Price: </label>   
                         <input 
                             type="text" 
                             name="price" 
                             id="price"
                             value={newCard.price}
                             onChange={changeHandler}
-                            />                
+                            onBlur={() => {
+                        if(newCard.name) {
+                            setErrorObj
+                            ((prevErrorObj) => {
+                                return {
+                                    ...prevErrorObj,
+                                    name: ""
+                                }
+                            })
+                        }
+                    }}
+                    />
+                     {errorObj.name && (
+                        <>
+                        <br />
+                        <small className="errorFeedback">{errorObj.name}</small>
+                        </>
+                    )}                 
                 </div>
-                <div className="formGroup">
+                {/* <div className="formGroup">
                     <label htmlFor="affordable">Is it Affordable? </label>   
                         <input 
                             type="text" 
@@ -69,30 +175,30 @@ export function GearForm() {
                             value={newCard.affordable}
                             onChange={changeHandler}
                             />                
-                </div>
+                </div> */}
                 <div className="formgroup">
                     <label htmlFor="affordable">Is it Affordable? </label>
                     <select 
                         name="affordable" 
                         id="affordable"
-                        value={newCard.affordable}
+                        value={newCard.affordable.multiple}
                         onChange={changeHandler}
                     >
                         <option value="true">yes</option>
                         <option value="false">no</option> 
                     </select>  
                 </div>
-                <div className="formGroup">
+                {/* <div className="formGroup">
                     <label htmlFor="affordable">Is it Affordable? </label>   
                         <input 
                             type="radio" 
                             name="affordable" 
                             id="affordable"
                             value={newCard.affordable}
-                            checked={buttonState}
+                            checked={setButtonState}
                             onChange={changeHandler}
                             />                
-                </div>
+                </div> */}
                 {/* <div className="formGroup checkbox-group">
                     <label htmlFor="affordable">Is it Affordable: </label>   
                         <input 
@@ -107,5 +213,8 @@ export function GearForm() {
             </fieldset>
             <button type="submit">Add Card</button>
         </form>
-    )
-}
+    );
+}}
+GearForm.propTypes = {
+    addCardFn: PropTypes.func.isRequired
+} 

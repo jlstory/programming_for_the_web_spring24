@@ -121,6 +121,14 @@ function duplicateCard(id) {
   const updatedGear = {...matchingGear, id: nanoid()}
   setGear([...gear, updatedGear]);
 }
+function addCard(newCard) {
+  const cardWidthId = {
+    ...newCard,
+    id: nanoid()
+  }
+  setGear([...gear,cardWidthId])
+ }
+
 
   return (
     <div className="page">
@@ -140,7 +148,7 @@ function duplicateCard(id) {
         })}
       </div>
       <hr />
-      <GearForm />
+      <GearForm addCardFn={addCard}/>
     </div>
   )
 }
