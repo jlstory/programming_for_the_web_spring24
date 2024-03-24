@@ -9,8 +9,7 @@ export function GearForm() {
         id: "" 
 
     }
-    const buttonState = Boolean(['true', 'false']);
-    if (buttonState.checked === "true" ? Boolean(true) : Boolean(false));
+    const buttonState = Boolean([Boolean('true'), Boolean('false')]);
     const [newCard, setNewCard] = useState(initialCardSetting);
     function changeHandler(event) {
         setNewCard((prevCard) => {
