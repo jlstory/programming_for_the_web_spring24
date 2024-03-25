@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import "./ItemCard.css";
 import clsx from "clsx";
+import { GearForm } from "../GearForm/GearForm";
 import trash from "../assets/icons/trash-can-solid.svg";
 import copy from "../assets/icons/copy-solid.svg";
 

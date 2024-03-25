@@ -77,7 +77,22 @@ export function GearForm({ addCardFn }) {
             setNewCard({
             ...initialCardSetting,
         });
-    }}
+        if(event.target.name === affordable) {
+            setNewCard((prevCard) => {
+                return{
+                    ...prevCard,
+                    affordable: event.target.value === "true" ? true : false}})
+                } else {
+                    setNewCard((prevCard) => {
+                        return {
+                            ...prevCard,
+                            [event.target.name]: event.target.value}
+                        }
+                    )
+                }
+            }
+        }
+    
     return (
         <form className="gear_form--wrapper" onSubmit={submitHandler}>
             <fieldset>
@@ -181,8 +196,8 @@ export function GearForm({ addCardFn }) {
                         value={newCard.affordable.multiple}
                         onChange={changeHandler}
                     >
-                        <option value={true}>yes</option>
-                        <option value={false}>no</option> 
+                        <option value="true">yes</option>
+                        <option value="false">no</option> 
                     </select>  
                 </div>
                 {/* <div className="formGroup">
@@ -204,7 +219,7 @@ export function GearForm({ addCardFn }) {
                             id="affordable"
                             // value={newCard.affordable}
                             onChange={changeHandler}
-                            checked={newCard.affordable === 'on' ? Boolean('on').valueOf(true) : Boolean(false)}
+                            checked={newCard.affordable === 'on' ? Boolean('on').valueOf(true) : Boolean(true)}
                             />                
                 </div> */}
             </fieldset>
