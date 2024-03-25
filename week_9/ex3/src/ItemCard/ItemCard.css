@@ -39,3 +39,9 @@ h3 {
   position: relative;
   bottom: 5px;
 }
+
+.cardImg {
+  min-width: 200px;
+  min-height: 100px;
+  align-items: center;
+}
