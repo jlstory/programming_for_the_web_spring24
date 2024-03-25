@@ -29,7 +29,7 @@ export function GearForm({ addCardFn }) {
             setErrorObj((prevErrorObj) => {
                 return {
                     ...prevErrorObj,
-                    brand: "This field is required"
+                    brand: " This field is required"
                 }
             });
             //return false;
@@ -40,7 +40,7 @@ export function GearForm({ addCardFn }) {
             setErrorObj((prevErrorObj) => {
                 return {
                     ...prevErrorObj,
-                    item: "This field is required"
+                    item: " This field is required"
                 }
             });
             //return false;
@@ -51,7 +51,7 @@ export function GearForm({ addCardFn }) {
             setErrorObj((prevErrorObj) => {
                 return {
                     ...prevErrorObj,
-                    price: "This field is required"
+                    price: " This field is required"
                 }
             });
             //return false;
