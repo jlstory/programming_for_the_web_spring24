@@ -20,9 +20,9 @@ export function GearForm({ addCardFn }) {
 
     // validate function
  function validateForm(newCard) {
-        console.log("triggering validation", !!newCard.name)
+        console.log("triggering validation", !!newCard.brand)
         let valid = true;
-        if(!newCard.name) {
+        if(!newCard.brand) {
             console.log("setting error object")
             //set error object tabi prop to error message
             setErrorObj((prevErrorObj) => {
@@ -34,7 +34,7 @@ export function GearForm({ addCardFn }) {
             //return false;
             valid = false;
         }
-        if(!newCard.image) {
+        if(!newCard.item) {
             //set image prop to error message
             setErrorObj((prevErrorObj) => {
                 return {
@@ -45,7 +45,7 @@ export function GearForm({ addCardFn }) {
             //return false;
             valid = false;
         }
-        if(!newCard.image) {
+        if(!newCard.price ) {
             //set image prop to error message
             setErrorObj((prevErrorObj) => {
                 return {
@@ -77,7 +77,7 @@ export function GearForm({ addCardFn }) {
             setNewCard({
             ...initialCardSetting,
         });
-    }
+    }}
     return (
         <form className="gear_form--wrapper" onSubmit={submitHandler}>
             <fieldset>
@@ -92,8 +92,7 @@ export function GearForm({ addCardFn }) {
                             onChange={changeHandler}
                             onBlur={() => {
                                 if(newCard.brand) {
-                                    setErrorObj
-                                    ((prevErrorObj) => {
+                                    setErrorObj((prevErrorObj) => {
                                         return {
                                             ...prevErrorObj,
                                             brand: ""
@@ -102,7 +101,7 @@ export function GearForm({ addCardFn }) {
                                 }
                             }}
                     />
-                     {errorObj.name && (
+                     {errorObj.brand && (
                         <>
                         <br />
                         <small className="errorFeedback">{errorObj.name}</small>
@@ -119,17 +118,16 @@ export function GearForm({ addCardFn }) {
                             onChange={changeHandler}
                             onBlur={() => {
                                 if(newCard.item) {
-                                    setErrorObj
-                                    ((prevErrorObj) => {
+                                    setErrorObj((prevErrorObj) => {
                                         return {
                                             ...prevErrorObj,
-                                            name: ""
+                                            item: ""
                                         }
                                     })
                                 }
                             }}
                     />
-                     {errorObj.name && (
+                     {errorObj.item && (
                         <>
                         <br />
                         <small className="errorFeedback">{errorObj.name}</small>
@@ -149,20 +147,19 @@ export function GearForm({ addCardFn }) {
                             onChange={changeHandler}
                             onBlur={() => {
                         if(newCard.name) {
-                            setErrorObj
-                            ((prevErrorObj) => {
+                            setErrorObj((prevErrorObj) => {
                                 return {
                                     ...prevErrorObj,
-                                    name: ""
+                                    price: ""
                                 }
                             })
                         }
                     }}
                     />
-                     {errorObj.name && (
+                     {errorObj.price && (
                         <>
                         <br />
-                        <small className="errorFeedback">{errorObj.name}</small>
+                        <small className="errorFeedback">{errorObj.brand}</small>
                         </>
                     )}                 
                 </div>
@@ -184,8 +181,8 @@ export function GearForm({ addCardFn }) {
                         value={newCard.affordable.multiple}
                         onChange={changeHandler}
                     >
-                        <option value="true">yes</option>
-                        <option value="false">no</option> 
+                        <option value={true}>yes</option>
+                        <option value={false}>no</option> 
                     </select>  
                 </div>
                 {/* <div className="formGroup">
@@ -214,7 +211,7 @@ export function GearForm({ addCardFn }) {
             <button type="submit">Add Card</button>
         </form>
     );
-}}
+}
 GearForm.propTypes = {
     addCardFn: PropTypes.func.isRequired
 } 
