@@ -122,7 +122,7 @@ export function GearForm({ addCardFn }) {
                      {errorObj.brand && (
                         <>
                         <br />
-                        <small className="errorFeedback">{errorObj.name}</small>
+                        <small className="errorFeedback">{errorObj.brand}</small>
                         </>
                     )}             
                 </div>
@@ -148,7 +148,7 @@ export function GearForm({ addCardFn }) {
                      {errorObj.item && (
                         <>
                         <br />
-                        <small className="errorFeedback">{errorObj.name}</small>
+                        <small className="errorFeedback">{errorObj.item}</small>
                         </>
                     )}                       
                 </div>
@@ -178,7 +178,7 @@ export function GearForm({ addCardFn }) {
                      {errorObj.price && (
                         <>
                         <br />
-                        <small className="errorFeedback">{errorObj.brand}</small>
+                        <small className="errorFeedback">{errorObj.price}</small>
                         </>
                     )}                 
                 </div>
