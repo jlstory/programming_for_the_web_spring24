@@ -11,8 +11,9 @@
   filter: opacity(1);
   mix-blend-mode: hard-light;
   width: 100vw;
-  margin: 0 auto;
+  margin: 0;
   height: 216px;
+  right: 0px;
 }
 
 .masthead h1 {

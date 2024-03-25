@@ -1,12 +1,13 @@
 import { useState } from "react"
 import PropTypes from "prop-types";
 import "./GearForm.css"
+import clsx from "clsx";
 export function GearForm({ addCardFn }) {
     const initialCardSetting = {
         item: "",
         brand: "",
         price: "",
-        affordable: [],
+        affordable: true,
         id: "" 
     }
     // const [buttonState, setButtonState] = useState('true', 'false');
@@ -62,6 +63,19 @@ export function GearForm({ addCardFn }) {
     }
     
     function changeHandler(event) {
+         if(event.target.name === GearForm.affordable) {
+            setNewCard((prevCard) => {
+                return{
+                    ...prevCard,
+                    affordable: event.target.value === "true" ? true : false}})              
+                } else {
+                    setNewCard((prevCard) => {
+                        return {
+                            ...prevCard,
+                            [event.target.name]: event.target.value}
+                        }
+                    )
+                }
         setNewCard((prevCard) => {
             return {
                 ...prevCard,
@@ -77,27 +91,16 @@ export function GearForm({ addCardFn }) {
             setNewCard({
             ...initialCardSetting,
         });
-        if(event.target.name === affordable) {
-            setNewCard((prevCard) => {
-                return{
-                    ...prevCard,
-                    affordable: event.target.value === "true" ? true : false}})
-                } else {
-                    setNewCard((prevCard) => {
-                        return {
-                            ...prevCard,
-                            [event.target.name]: event.target.value}
-                        }
-                    )
-                }
-            }
-        }
+       
+    }
+}
     
     return (
         <form className="gear_form--wrapper" onSubmit={submitHandler}>
             <fieldset>
                 <legend>Gear Details</legend>
-                <div className={{"form-group": true, "error": errorObj.brand}}>
+                <div className="formInline">
+                <div className={clsx({"form-group": true, "error": errorObj.brand})}>
                     <label className="required" htmlFor="brand">Brand / Logo URL: </label>   
                         <input 
                             type="text" 
@@ -123,7 +126,7 @@ export function GearForm({ addCardFn }) {
                         </>
                     )}             
                 </div>
-                <div className={{"form-group": true, "error": errorObj.item}}>
+                <div className={clsx({"form-group": true, "error": errorObj.item})}>
                     <label className="required" htmlFor="item">Product or Item: </label>   
                         <input 
                             type="text" 
@@ -149,10 +152,11 @@ export function GearForm({ addCardFn }) {
                         </>
                     )}                       
                 </div>
+                </div>
             </fieldset>
             <fieldset>
                 <legend>Additional Details</legend>
-                <div className={{"form-group": true, "error": errorObj.price}}>
+                <div className={clsx({"form-group": true, "error": errorObj.price})}>
                     <label className="required" htmlFor="price">Retail Price: </label>   
                         <input 
                             type="text" 
@@ -161,7 +165,7 @@ export function GearForm({ addCardFn }) {
                             value={newCard.price}
                             onChange={changeHandler}
                             onBlur={() => {
-                        if(newCard.name) {
+                        if(newCard.price) {
                             setErrorObj((prevErrorObj) => {
                                 return {
                                     ...prevErrorObj,
@@ -223,7 +227,7 @@ export function GearForm({ addCardFn }) {
                             />                
                 </div> */}
             </fieldset>
-            <button type="submit">Add Card</button>
+            <button className="btn--submit" type="submit">Add Card</button>
         </form>
     );
 }

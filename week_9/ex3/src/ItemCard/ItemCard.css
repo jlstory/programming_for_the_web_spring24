@@ -9,7 +9,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   background: #fff;
   color: #202020;

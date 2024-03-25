@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './App.css';
 import Masthead from './Masthead/Masthead';
+import { GearForm } from './GearForm/GearForm';
 import ItemCard from './ItemCard/ItemCard';
 import {nanoid} from "nanoid";
-import { GearForm } from './GearForm/GearForm';
+import clsx from "clsx";
+
 
 function App() {
 const [gear, setGear] = useState([
@@ -147,7 +149,7 @@ function addCard(newCard) {
           )
         })}
       </div>
-      <hr />
+      <hr className='hr'/>
       <GearForm addCardFn={addCard}/>
     </div>
   )
