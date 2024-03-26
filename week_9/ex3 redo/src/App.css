@@ -49,3 +49,9 @@ h2 {
   display: block;
   margin: 0 auto !important;
 }
+
+.collection {
+  justify-content: left;
+  width: 85rem;
+  margin: -12em auto 3em;
+}

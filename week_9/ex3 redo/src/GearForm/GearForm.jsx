@@ -51,7 +51,7 @@ export function GearForm({ addCardFn }) {
             setErrorObj((prevErrorObj) => {
                 return {
                     ...prevErrorObj,
-                    price: " This field is required"
+                    price: " This field is required (number values only)"
                 }
             });
             //return false;
