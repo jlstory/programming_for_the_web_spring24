@@ -1,0 +1,47 @@
+.gearCard {
+  width: 100%;
+  max-width: 250px;
+  padding: 20px;
+  height: 375px;
+  border: 5px solid #000;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: #fff;
+  color: #202020;
+}
+
+.icon {
+  max-width: 30px;
+  bottom: 50px;
+  margin: 20px;
+}
+
+h3 {
+  font-size: 1.125em;
+  margin: 0px;
+}
+
+.price {
+  position: relative;
+  font-size: 1em;
+  bottom: -30px;
+  text-align: center;
+}
+
+.gearCard .affordable {
+  color: #cc0022;
+  font-weight: bold;
+  position: relative;
+  bottom: 5px;
+}
+
+.cardImg {
+  min-width: 200px;
+  min-height: 100px;
+  align-items: center;
+}
