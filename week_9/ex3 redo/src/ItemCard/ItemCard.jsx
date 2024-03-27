@@ -24,7 +24,7 @@ export default function ItemCard({
                 <h3>{item}</h3>
             </div>
             <div className="price">
-                <p>price: {price}</p>
+                <p>price: ${price}</p>
             </div>
             <div className="affordable">
                 <p style={{color: affordable ? "green" : "red"}}>
