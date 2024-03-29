@@ -1,0 +1,66 @@
+.gear_form--wrapper {
+  border-radius: 20px;
+  border: 1px solid #303030;
+  padding: 2em 3em;
+  color: #fff;
+  margin: 4rem auto 8rem;
+}
+
+fieldset {
+  margin-bottom: 2em;
+}
+
+legend {
+  font-size: 1.75em;
+}
+
+label {
+  color: #fff I !important;
+  font-size: 1.1em;
+  margin: 2em 1em 1em;
+}
+
+input {
+  color: #fff;
+  background-color: #404040;
+  outline: none;
+  margin: 2em 3em 1em 0.5em;
+  width: 20em;
+  height: 2em;
+}
+
+.formInline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 3em 3em;
+}
+
+select {
+  margin: 3rem 1rem;
+  font-size: 1.1em;
+  padding: 0.25em 1em;
+  border-radius: 20px;
+}
+
+.btn--submit {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 0.25em 1.25em;
+  margin: 1em;
+  border-radius: 20px;
+}
+
+.btn--submit:hover {
+  background-color: red;
+}
+
+.required::before {
+  color: red;
+  content: "*  ";
+  margin-right: 0.25em;
+}
+
+.errorFeedback {
+  color: red;
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "item": "Mariana Bass Synthesizer",
+    "brand": "./moog.png",
+    "price": "99.00",
+    "affordable": true,
+    "desc": "Born from the depths of Moog Music's legacy in bass synthesis, Mariana breathes new life into electronic sound     design techniques for the modern player or producer. A powerful creative companion, Mariana is designed for intuitive audio layering and processing, merging the soul of Moog bass with user-friendly technology for all digital creators. Optimized for vibrant bass sounds, Mariana invites users to dial in tones that span genres, easily form modulation pathways to create complex timbres, and sculpt distinct sounds that sit perfectly in any mix with built-in effects and compression. Mariana is a dual-layer synthesizer, allowing you to mix together two completely different synthesizer sounds that can dynamically complement each other or be played duophonically. Each layer is built around two oscillators with precise and inventive controls to make your bass tone punch through a mix and stand out from the rest, with a sub-oscillator adding even more low-end weight. Two resonant Moog filters and a third filter specifically for the sub-oscillator let you shape your sound, adding warmth while rolling off high frequencies or pushing up the resonance for added bite. With stereo oscillators and crossover filter functionality, Mariana is optimized for quickly fine-tuning stereo content while simultaneously preserving a powerful mono bass foundation.",
+    "image": "./mariana.jpg",
+    "id": "1"
+  },
+  {
+    "item": "Moog Matriarch",
+    "brand": "./moog.png",
+    "price": "1,999.99",
+    "affordable": false,
+    "desc": "Matriarch is an analog synthesizer with an emphasis on imagination. The pinnacle of Moog’s semi-modular family of  synthesizers, Matriarch’s patchable architecture and vintage Moog circuits reward open exploration with endless sonic possibilities and unparalleled analog sound. Easily create rich harmonic shapes with up to 4 notes of paraphony that can be sequenced, saved, and shifted with Matriarch’s intuitive 256 step sequencer, or stack the analog VCOs to play on a massive 4 oscillator mono synth. With a deep assortment of synthesis modules based on Bob Moog’s original circuit designs, Matriarch’s 100% analog signal path spans a dynamic sonic vocabulary – from overdriven monophonic bass to gently evolving paraphonic plucks that cycle through waveshapes into a wash of infinite delay trails. Coupling the power of vintage stereo ladder filters, dual Envelope Generators, stereo Analog Delays, and stereo VCAs, Matriarch delivers a multidimensional sound that empowers the sonic exploration of space and time. Though Matriarch’s semi-modular design requires absolutely no patching, 90 modular patch points are easily accessible throughout the panel via the included 3.5mm patch cables. This powerful electronic instrument is a highly-versatile addition to any stage or studio that can effortlessly transform from a performance keyboard to a fully modular analog synthesizer at a moment’s notice.In addition to its standalone function, Matriarch is also an ideal processor of external sound sources and a powerful keyboard front-end for expanding a DFAM, Mother-32, Grandmother, or Eurorack modular system. ",
+    "image": "./matriarch.jpg",
+    "id": "2"
+  },
+  {
+    "item": "AWS 948",
+    "brand": "./ssl.png",
+    "price": "118,244.00",
+    "affordable": false,
+    "desc": "This in-line hybrid console delivers legendary SSL workflow, top-quality sound, and advanced Delta-Control, which seamlessly integrates console and DAW automation. A per-fader plug-in (native AAX/AU/VST/VST3), Delta-Control gives you automated control over AWS console channel and mix bus volume as if it were a DAW plug-in. Inserting 24 instances into your DAW session allows control of volumes and mutes for all 24 AWS channels. On the return side, a 6-channel monitoring system makes the AWS 948 fully equipped to handle monitoring for up to 5.1 surround-sound mixes, complete with insert points and external metering outputs. A full set of communication options gives you the talkback routing you need. And the AWS 948 even includes a center-section Master Bus compressor based on the legendary G Series console — a feature Sweetwater engineers really appreciate! With an SSL AWS 948 workstation in your studio, you'll be able to mix better-sounding music more quickly than ever before.",
+    "image": "./mixer.jpg",
+    "id": "3"
+  },
+  {
+    "item": "Custom Shop LE Nashville Ash-V '57 Stratocaster HSS",
+    "brand": "./fender.png",
+    "price": "5,800.00",
+    "affordable": false,
+    "desc": "This limited-edition Nashville Ash-V '57 Stratocaster HSS from Fender Custom Shop has been heavily aged for a vintage owning experience. Solid body design cut from ash wood along with a vintage V shaped neck and HSS pickup configuration make this renewed relic an absolute tone beast",
+    "image": "./strat.jpg",
+    "id": "4"
+  },
+  {
+    "item": "Matriarch Dark Semi-Modular Analog Synth",
+    "brand": "./moog.png",
+    "price": "1,799.00",
+    "affordable": false,
+    "desc": "Matriarch Dark’s all-analog signal path delivers a wide variety of sonic capabilities. Range from overdriven monophonic bass to gently evolving paraphonic plucks that cycle through waveshapes into a wash of infinite delay trails. Easily create harmonically rich content with up to four notes of polyphony. Or, stack all four VCOs and create a powerful mono synth capable of cutting through any mix. Like many Moog modular synths before it, Matriarch Dark’s sound engine, modulation engine, stereo ladder filters, dual envelopes and stereo delay are completely analog. The result is an unrestricted sonic vocabulary of immense beauty and power. In addition, Matriarch Dark also features an easy-to-use arpeggiator and a built-in sequencer with up to 256 steps, four notes per step and 12 stored patterns. The sequencer can also be patched to independently control external gear.",
+    "image": "./moog_dark.jpg",
+    "id": "5"
+  },
+  {
+    "item": "American Ultra Jazzmaster - Cobra Blue",
+    "brand": "./fender.png",
+    "price": "2,249.99",
+    "affordable": false,
+    "desc": "Blending classic single-coil guitar tones with modern player preferences, the Fender American Ultra Jazzmaster represents a performance-focused update to one of the most iconic electric guitars around. Two Fender Ultra Noiseless pickups deliver the classic chime and richness Jazzmaster fans love, while S1 switching gives you the ability to switch between series or parallel modes for even more sonic versatility. The Modern D neck profile with satin finish plays amazingly fast and smooth, sure to appeal to fans of modern, thinner neck profiles. Complete with a bound, compound-radius fretboard for fluid playability, the Fender American Ultra Jazzmaster is an outstanding example of the world's favorite offset electric guitar.",
+    "image": "./jazzmaster.jpg",
+    "id": "6"
+  },
+  {
+    "item": "G6210 Custom Shop Jr. Jet",
+    "brand": "./gret.png",
+    "price": "4,699.99",
+    "affordable": false,
+    "desc": "This unique Gretsch Custom Shop Jet Jr. from Master Builder Stephen Stern is a true standout. Featuring a Relic-finished knotty pine top in a classic Gretsch Orange stain with tortoiseshell binding and pickguard, its stunning looks are complemented by the snarl of dual Seymour Duncan P-90 soapbar pickups. To round off the package is the ever-popular Bigsby B5 vibrato tailpiece and Gretsch's rocking bar bridge.",
+    "image": "./gretsch.jpg",
+    "id": "7"
+  },
+  {
+    "item": "Limited RS124 Compressor Matched Pair",
+    "brand": "./chand.png",
+    "price": "6,740.00",
+    "affordable": false,
+    "desc": "The Chandler Limited RS124 packs three legendary Abbey Road RS124 compressors into one chassis. Over the decades since the Abbey Road RS124 graced Beatles' recordings, there were attempts to re-create the hardware from sketchy information; none of these efforts fully realized the elusive musical soul of the original EMI unit. Schematics relayed only so much of the design. So Chandler turned to historic units provided by Abbey Road, as well as handwritten modification memos that would prove essential in understanding the essence of the beast. They succeeded! The Chandler Limited RS124 nails the behavior and sonics of the original - which Peter Cobbin, Abbey Road's Director of Engineering, describes as pure cream being drizzled slowly into and over a mix.",
+    "image": "./compressor.jpeg",
+    "id": "8"
+  },
+  {
+    "item": "Massive Passive Stereo EQ",
+    "brand": "./manley.png",
+    "price": "8,399.00",
+    "affordable": false,
+    "desc": "Manley's Massive Passive is an equalization monster. You can expect the best strengths of Pultec-style equalizers as well as choice console, parametric, and graphic EQs — all the radical shaping you'll need for the most demanding of sessions as well as the delicate, subtle shadings needed for vocals and mastering. The 2-channel, 4-band Massive Passive features a passive tone-shaping portion of the equalizer design and uses only the best components, for its ultimately huge, high-headroom performance. Offering incredible sculpting abilities, without all the coloration, the Massive Passive may well be your last equalizer.",
+    "image": "./manley.jpg",
+    "id": "9"
+  },
+  {
+    "item": "Stage 4 88-Key Keyboard",
+    "brand": "./nord.png",
+    "price": "6,747.00",
+    "affordable": false,
+    "desc": "Since Hans Nordelius developed the first dynamic-playback digital drum pad in 1983, Nord has remained at the forefront of sonic innovation, handcrafting every keyboard in their Stockholm-based operation while maintaining tradition through meticulous research and design. With the Stage 4, they’ve once again raised the bar on lightweight stage pianos that retain sonic scope and aural fidelity and provide unmatched nuance and control for dialing in a suite of versatile tones. From FM and Virtual Analog synthesis via the Wave 2 Synth Engine to the doubled sample memoryproviding even greater quality of their award-winning piano, organ, and EP emulations, the triple-sensor keybed feels every piece of each note. Robust effects can be assigned per layer, with new physical drawbars, LED indicators, and the advanced MIDI control of the Extern mode granting unparalleled control over the Stage 4’s impressive array of sonic sculpting options, hand-delivering keyboard pros and synthesists alike at Sweetwater an incredible sandbox of music production.",
+    "image": "./nord_st4.jpg",
+    "id": "10"
+  },
+  {
+    "item": "HDV 820 Digital Headphone Amplifier",
+    "brand": "./senn.png",
+    "price": "2,499.95",
+    "affordable": false,
+    "desc": "How do you make some of the best headphones on the market even better? If you're Sennheiser, you build the HDV 820 headphone amp to play up all the strengths of your flagship HD 800 S open-back 'phones and new closed-back HD 820 headphones. The most obvious matches between the two are in the cosmetics and the connectivity — this is one of the few amps we offer that can accept a balanced 4.4mm headphone cable. But this powerful desktop amp also drives Sennheiser's best headphones to perform at their top potential. Sennheiser designed this amp to accentuate the sonic advantages of the HD 800 S and HD 820. The HDV 820 spreads out the headphones' large soundstage even wider. And together, the pair delivers airy, musical highs along with taut, detailed mids and a sweet helping of bass precision.",
+    "image": "./headphone_amp.jpg",
+    "id": "11"
+  },
+  {
+    "item": "HD820 Over-Ear Headphones",
+    "brand": "./senn.png",
+    "price": "1,999.95",
+    "affordable": false,
+    "desc": "This is the first sealed-back model in Sennheiser's legendary HD 800 series, and the company went all out. The earcups are sealed with concave, heavy-duty glass covers that show off the drivers and help absorb unwanted vibrations. The result? Transparent, spacious sound like you'd expect from an open-back headphone, but with the insulated listening experience of a closed-back design.",
+    "image": "./headphones.jpg",
+    "id": "12"
+  },
+  {
+    "item": "Collector's Series Purpleheart 7-Piece Drum Kit",
+    "brand": "./dw.png",
+    "price": "10,321.25",
+    "affordable": false,
+    "desc": "The DW Collectors Series Purpleheart 7-Piece Lacquer Specialty Shell Pack features shells constructed from dense purpleheart hardwood for a sound unlike any other. Brought to you by the master craftsmen at DW Drums, this custom shell pack provides the performance and quality that serious drummers demand. The purpleheart wood shells deliver a tone with ample projection, sensitivity, and attack that traditional maple or birch shells simply can't achieve.",
+    "image": "./drums.jpg",
+    "id": "13"
+  },
+  {
+    "item": "Clavinova CVP-909 Digital Grand Piano",
+    "brand": "./yamaha.png",
+    "price": "18,499.99",
+    "affordable": false,
+    "desc": "The Yamaha Clavinova CVP-909 delivers grand piano touch and tone, featuring two of the most coveted, word-class grand pianos – the Yamaha CFX and Bosendorfer Imperial. With a complete palette of stunning instrument Voices and realistic accompaniment Styles, your performance will sound better than ever. Expansive song libraries like Follow Lights and You Are The Artist make learning more fun and music education more entertaining. This flagship Clavinova CVP is truly an all-in-one musical entertainment center. Yamaha's Smart Pianist app for iOS allows you to control the functions of your CVP-909 with your iOS device for intuitive and easy operation. Smart Pianist can also analyze the songs in your iPad or iPhone music library and display the chord symbols so that you can play along with your favorite tunes using CVP-909's Bluetooth connectivity.",
+    "image": "./yam_clav.jpg",
+    "id": "14"
+  },
+  {
+    "item": "Fully Loaded Mac Pro Rack Mount w/ 2X Pro Studio Display XLRs",
+    "brand": "./mac.png",
+    "price": "26,754.00",
+    "affordable": false,
+    "desc": "The new Mac Pro is a game-changing combination of Apple silicon performance and PCIe expansion for specialized workflows. And every configuration comes with the incredible new M2 Ultra — our most powerful and capable chip ever.",
+    "image": "./mac_pro.jpg",
+    "id": "15"
+  }
+]
