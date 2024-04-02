@@ -4,9 +4,8 @@ const h = window.innerHeight;
 let rotateBy = 1;
 let rotateByB = 360;
 let rotateByC = 720;
-let randColor;
-let colorsArray = ['darkblue', 'blueviolet', 'navy', 'midnightblue', 'indigo', 'steelblue'];
 // create canvas
+
 function setup() {
     createCanvas(w, h, WEBGL);
     background('rgba(0, 0, 0, .8)');
