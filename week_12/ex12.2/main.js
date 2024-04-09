@@ -17,9 +17,9 @@ function setup() {
   cellWidth = width / beatLength;
   cursorPos = 0;
 
-  hh = loadSound('../sounds/hh_closed.wav', () => {});
-  snare = loadSound('../sounds/snare.wav', () => {});
-  bass = loadSound('../sounds/kick.wav', () => {});
+  hh = loadSound('./sounds/hh_closed.wav', () => {});
+  snare = loadSound('./sounds/snare.wav', () => {});
+  bass = loadSound('./sounds/kick.wav', () => {});
 
   hPat = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   cPat = [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0];
