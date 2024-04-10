@@ -74,7 +74,6 @@ function keyPressed() {
   if (key === " ") {
     if (hh.isLoaded() && snare.isLoaded() && bass.isLoaded()) {
       if (!drums.isPlaying) {
-        // drums.metro.metroTicks = 0;
         drums.loop();
       } else {
         drums.pause();
@@ -89,7 +88,7 @@ function keyPressed() {
 
 function canvasPressed() {
   let rowClicked = floor(3 * mouseY / height);
-  let indexClicked = floor(16*mouseX/width);
+  let indexClicked = floor(16 * mouseX / width);
   if (rowClicked === 0) {
     console.log('first row ' + indexClicked);
     hPat[indexClicked] = +!hPat[indexClicked];
@@ -133,13 +132,13 @@ const drawMatrix = () => {
 const sequence = (time, beatIndex) => {
 	// console.log(beatIndex);
     setTimeout(() => {drawMatrix();
-    drawPlayhead(beatIndex);}, time*1000);
+    drawPlayhead(beatIndex);}, time * 1000);
 }
 
 const drawPlayhead = (beatIndex) => {
 	stroke('red');
   fill(255, 0, 0, 30);
-  rect((beatIndex-1)*cellWidth, 0, cellWidth, height);
+  rect((beatIndex-1) * cellWidth, 0, cellWidth, height);
 
 }
 
