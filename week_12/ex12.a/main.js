@@ -60,8 +60,8 @@ function setup() {
   drums.addPhrase(bPhrase);
   drums.addPhrase('seq', sequence, sPat);
   //BPM Slider
-  bpmCTRL = createSlider(10, 200, 80, 1);
-  bpmCTRL.position(width / 2 -500, 550);
+  bpmCTRL = createSlider(10, 180, 80, 1);
+  bpmCTRL.position(width / 2, 550);
   bpmCTRL.addClass('slider');
   bpmCTRL.input(() => {
     drums.setBPM(bpmCTRL.value())
