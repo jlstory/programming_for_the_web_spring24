@@ -25,11 +25,7 @@ body {
 }
 
 .slider {
-  display: block !important;
-  position: inherit !important;
-  margin: 1em auto !important;
-  width: 500px;
-  justify-content: center !important;
+  width: 1000px;
 }
 
 .p5Canvas {
@@ -37,9 +33,6 @@ body {
 }
 
 button {
-  display: block !important;
-  position: inherit !important;
-  margin: 2em auto !important;
   padding: 8px 48px;
   border-radius: 50px;
 }
