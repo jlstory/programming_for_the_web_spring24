@@ -109,7 +109,6 @@ const drawMatrix = () => {
   strokeWeight(2);
   fill('blue');
   for (let i = 0; i < beatLength + 1; i++) {
-    //startx, starty, endx, endy
     line(i * cellWidth, 0, i * cellWidth, height);
   }
   for (let i = 0; i < 4; i++) {
