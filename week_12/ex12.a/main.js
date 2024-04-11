@@ -37,14 +37,15 @@ function setup() {
   }, bPat);
   
   playPause = createButton("Play Your Beat!")
-    .position(1660, 540)
-    .mouseClicked(() => {
+    .position(1450, 540)
+    .mousePressed(() => {
     if (hh.isLoaded() && snare.isLoaded() && bass.isLoaded()) {
       if (!drums.isPlaying) {
+        userStartAudio();
         drums.loop();
         playPause.html("Pause the Beat")
       } else {
-        drums.pause();
+        drums.stop();
         playPause.html("Play Your Beat!")
       }
     } else {
@@ -60,7 +61,7 @@ function setup() {
   drums.addPhrase('seq', sequence, sPat);
   
   bpmCTRL = createSlider(10, 250, 80, 1);
-  bpmCTRL.position(625, 550);
+  bpmCTRL.position(400, 550);
   bpmCTRL.addClass('slider');
   bpmCTRL.input(() => {
     drums.setBPM(bpmCTRL.value())
@@ -74,17 +75,16 @@ function keyPressed() {
   if (key === " ") {
     if (hh.isLoaded() && snare.isLoaded() && bass.isLoaded()) {
       if (!drums.isPlaying) {
+        userStartAudio();
         drums.loop();
       } else {
-        drums.pause();
+        drums.stop();
       }
     } else {
       console.log('drums loading...');
     }
   }
 } 
-
-
 
 function canvasPressed() {
   let rowClicked = floor(3 * mouseY / height);
@@ -115,7 +115,8 @@ const drawMatrix = () => {
   for (let i = 0; i < 4; i++) {
     line(0, i * height / 3, width, i * height / 3);
   }
-  noStroke();
+  stroke('white');
+  strokeWeight(1);
   for (let i = 0; i < beatLength; i++) {
     if (hPat[i] === 1) {
       ellipse(i * cellWidth + 0.5 * cellWidth, height / 6, 20);
@@ -130,7 +131,7 @@ const drawMatrix = () => {
 }
 
 const sequence = (time, beatIndex) => {
-	// console.log(beatIndex);
+	console.log(beatIndex);
     setTimeout(() => {drawMatrix();
     drawPlayhead(beatIndex);}, time * 1000);
 }
@@ -144,6 +145,6 @@ const drawPlayhead = (beatIndex) => {
 
 const touchStarted = () => {
   if (getAudioContext().state !== 'running') {
-    getAudioContext().resume();
+    getAudioContext().loop();
   }
 }
