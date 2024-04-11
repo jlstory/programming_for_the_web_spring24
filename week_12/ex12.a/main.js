@@ -115,16 +115,16 @@ const drawMatrix = () => {
     line(0, i * height / 3, width, i * height / 3);
   }
   stroke('white');
-  strokeWeight(1);
+  strokeWeight(2);
   for (let i = 0; i < beatLength; i++) {
     if (hPat[i] === 1) {
-      ellipse(i * cellWidth + 0.5 * cellWidth, height / 6, 20);
+      ellipse(i * cellWidth + 0.5 * cellWidth, height / 6, 30);
     }
     if (cPat[i] === 1) {
-      ellipse(i * cellWidth + 0.5 * cellWidth, height / 2, 20);
+      ellipse(i * cellWidth + 0.5 * cellWidth, height / 2, 30);
     }
     if (bPat[i] === 1) {
-      ellipse(i * cellWidth + 0.5 * cellWidth, height * 5 / 6, 20);
+      ellipse(i * cellWidth + 0.5 * cellWidth, height * 5 / 6, 30);
     }
   }
 }
