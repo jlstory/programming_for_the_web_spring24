@@ -37,7 +37,7 @@ function setup() {
   }, bPat);
   
   playPause = createButton("Play Your Beat!")
-    .position(1450, 540)
+    .position(width * .72, 600)
     .mousePressed(() => {
     if (hh.isLoaded() && snare.isLoaded() && bass.isLoaded()) {
       if (!drums.isPlaying) {
@@ -61,7 +61,7 @@ function setup() {
   drums.addPhrase('seq', sequence, sPat);
   
   bpmCTRL = createSlider(10, 250, 80, 1);
-  bpmCTRL.position(400, 550);
+  bpmCTRL.position(width / 2 - 125, 550);
   bpmCTRL.addClass('slider');
   bpmCTRL.input(() => {
     drums.setBPM(bpmCTRL.value())
