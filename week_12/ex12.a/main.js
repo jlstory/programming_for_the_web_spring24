@@ -35,7 +35,7 @@ function setup() {
   bPhrase = new p5.Phrase('bass', (time) => {
     bass.play(time);
   }, bPat);
-  
+  //play button
   playPause = createButton("Play Your Beat!")
     .position(width * .72, 600)
     .mousePressed(() => {
@@ -59,7 +59,7 @@ function setup() {
   drums.addPhrase(sPhrase);
   drums.addPhrase(bPhrase);
   drums.addPhrase('seq', sequence, sPat);
-  
+  //BPM Slider
   bpmCTRL = createSlider(10, 250, 80, 1);
   bpmCTRL.position(width / 2 - 125, 550);
   bpmCTRL.addClass('slider');
@@ -70,7 +70,7 @@ function setup() {
   drawMatrix();
 }
 
-
+//Spacebar Start
 function keyPressed() {
   if (key === " ") {
     if (hh.isLoaded() && snare.isLoaded() && bass.isLoaded()) {
