@@ -29,6 +29,16 @@ function draw() {
   }
   vertex(width, height);
   endShape();
+  fill(lerpColor(white, blue, color));
+  beginShape();
+  vertex(0, height);
+  // for loop with sin() controls the movement of crosssection lines
+  for(var xb = -5; xb < width + 10; xb++){
+    let angle = offset + x * 0.1;
+    let y = map(sin(angle), -amp, amp, width / 2, -height);
+    vertex(x, y);
+  }
+   endShape();
   offset += 0.1;
   i += 0.01; 
 }
