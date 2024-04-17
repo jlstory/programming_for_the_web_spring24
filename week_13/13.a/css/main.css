@@ -1,0 +1,39 @@
+/* CSS Document */
+/* Author: Josh Story */
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  background: #000;
+  width: 100vw;
+  margin: 3em 0;
+  padding: 0rem;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 5em;
+}
+
+.p5Canvas {
+  margin-top: 3em;
+  border: 1px double #fff;
+}
+
+.p5canvas:hover,
+.p5Canvas:active {
+  cursor: url(../bucket.png), auto !important;
+}
