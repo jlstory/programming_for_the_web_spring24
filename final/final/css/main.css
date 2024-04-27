@@ -15,7 +15,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
+  color: limegreen;
   overflow-x: hidden;
   background: #202020;
   width: 100vw;
@@ -24,16 +24,26 @@ body {
   text-align: center;
 }
 
+h1 {
+  color: #000;
+  font-size: 3em;
+  font-weight: bolder;
+  -webkit-text-stroke: 3px limegreen;
+}
+
 .slider {
   display: relative !important;
   position: inherit !important;
   margin: 1em auto !important;
-  width: 500px;
+  width: 1280px;
   justify-content: center !important;
+  background: white;
 }
 
 .p5Canvas {
   margin: 1.5em auto;
+  border: 6px outset #eee !important;
+  box-shadow: 16px 16px 24px 4px #000 !important;
 }
 
 button {
@@ -42,4 +52,13 @@ button {
   margin: 2em auto !important;
   padding: 8px 48px;
   border-radius: 50px;
+  background-color: black;
+  color: limegreen;
+  border: 3px solid limegreen;
+}
+
+p {
+  display: block;
+  background-color: #202020 !important;
+  z-index: -50;
 }

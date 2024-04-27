@@ -7,21 +7,28 @@ let beatLength;
 let cellWidth;
 let cnv, playPause;
 let sPat;
+let reverb, delay, filter;
+let currentSpeed;
 let cursorPos;
 
 function setup() {
-  cnv = createCanvas(1280, 360);
+  cnv = createCanvas(1280, 385);
   cnv.mousePressed(canvasPressed);
 
   beatLength = 16;
   cellWidth = width / beatLength;
   cursorPos = 0;
 // samples
+let kitA = [oh, hh, snare, bass, sub];
+
+  console.log("preload");
+  soundFormats('wav');
   oh = loadSound('./sounds/hh_open.wav', () => {});
   hh = loadSound('./sounds/hh_closed.wav', () => {});
   snare = loadSound('./sounds/snare.wav', () => {});
   bass = loadSound('./sounds/kick.wav', () => {});
   sub = loadSound('./sounds/bass_hit.wav', () => {});
+  
 // predifined sequence
   ohPat = [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0];
   hPat = [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1];
@@ -77,7 +84,8 @@ function setup() {
   bpmCTRL = createSlider(10, 250, 80, 1);
   bpmCTRL.position(windowWidth * .25, 550);
   bpmCTRL.addClass('slider');
-  bpmCTRL.input(() => {
+  bpmCTRL.input((event) => {
+    console.log(event.target);
     drums.setBPM(bpmCTRL.value())
   });
   drums.setBPM('80');
@@ -100,33 +108,39 @@ function keyPressed() {
     }
   }
 } 
-
+//User Sequencing
 function canvasPressed() {
   let rowClicked = floor(5 * mouseY / height);
   let indexClicked = floor(16 * mouseX / width);
   if (rowClicked === 0) {
-    console.log('first row' + indexClicked);
+    console.log('synth cymbal ' + indexClicked);
     ohPat[indexClicked] = +!ohPat[indexClicked];
   } else if (rowClicked === 1) {
-    console.log('second row');
+    console.log('high hat ');
     hPat[indexClicked] = +!hPat[indexClicked];
   } else if (rowClicked === 2) {
-    console.log('third row');
+    console.log('snare drum ');
     cPat[indexClicked] = +!cPat[indexClicked];
   } else if (rowClicked === 3) {
-    console.log('fourth row');
+    console.log('kick drum ');
     bPat[indexClicked] = +!bPat[indexClicked];
   } else if (rowClicked === 4) {
-    console.log('fifth row');
+    console.log('sub bass ');
     subPat[indexClicked] = +!subPat[indexClicked];
   }
   
   drawMatrix();
 }
-
+//Matrix UI (add/remove notes from arrangement)
 const drawMatrix = () => {
-  background(10);
-  stroke('lightgray');
+  let r;
+  let g;
+  let b;
+  r = random(0, 255);
+  g = random(0, 255);
+  b = random(0, 255);
+  background(0);
+  stroke(r, g, b);
   strokeWeight(1);
   fill('blue');
   for (let i = 0; i < beatLength + 1; i++) {
@@ -139,26 +153,77 @@ const drawMatrix = () => {
   strokeWeight(1);
   for (let i = 0; i < beatLength; i++) {
     if (ohPat[i] === 1) {
+      stroke('deepskyblue');
       fill('deepskyblue');
-      ellipse(i * cellWidth + 0.5 * cellWidth, height * .6 / 6, 40);
+      rect(i * cellWidth + 0.13 *cellWidth, height * .12 / 6, 60);
+    } else {
+      stroke('deepskyblue');
+      noFill();
+      rect(i * cellWidth + 0.13 *cellWidth, height * .12 / 6, 60);
     }
     if (hPat[i] === 1) {
+      stroke('dodgerblue');
       fill('dodgerblue');
-      ellipse(i * cellWidth + 0.5 * cellWidth, height / 3.33, 40);
+      rect(i * cellWidth + 0.13 * cellWidth, height / 4.55, 60);
+    } else {
+      stroke('dodgerblue');
+      noFill();
+      rect(i * cellWidth + 0.13 * cellWidth, height / 4.55, 60); 
     }
     if (cPat[i] === 1) {
+      stroke('yellow');
       fill('yellow');
-      ellipse(i * cellWidth + 0.5 * cellWidth, height / 2, 40);
+      rect(i * cellWidth + 0.13 * cellWidth, height / 2.38, 60);
+    } else {
+      stroke('yellow');
+      noFill();
+      rect(i * cellWidth + 0.13 * cellWidth, height / 2.38, 60);
     }
     if (bPat[i] === 1) {
+      stroke('darkorange');
       fill('darkorange')
-      ellipse(i * cellWidth + 0.5 * cellWidth, height * 4.2 / 6, 40);
+      rect(i * cellWidth + 0.13 * cellWidth, height * 3.72 / 6, 60);
+    } else {
+      stroke('darkorange');
+      noFill();
+      rect(i * cellWidth + 0.13 * cellWidth, height * 3.72 / 6, 60);
     }
     if (subPat[i] === 1) {
+      stroke('crimson');
       fill('crimson')
-      ellipse(i * cellWidth + 0.5 * cellWidth, height * 5.4 / 6, 40);
+      rect(i * cellWidth + 0.13 * cellWidth, height * 4.92 / 6, 60);
+    } else {
+      stroke('crimson');
+      noFill();
+      rect(i * cellWidth + 0.13 * cellWidth, height * 4.92 / 6, 60);
     }
   }
+  let valueDisplayer;
+  valueDisplayer = createP();
+  valueDisplayer.position(width - width / 2 + 50, height + 400);
+  console.log(bpmCTRL.value);
+  valueDisplayer.html('BPM: ' + bpmCTRL.value());
+  //labels
+  let labelA;
+  labelA = createP();
+  labelA.position(160, 285);
+  labelA.html('Synth Cymbal');
+  let labelB;
+  labelB = createP();
+  labelB.position(160, 360);
+  labelB.html('High-Hat');
+  let labelC;
+  labelC = createP();
+  labelC.position(160, 435);
+  labelC.html('Snare Drum');
+  let labelD;
+  labelD = createP();
+  labelD.position(160, 510);
+  labelD.html('Kick Drum');
+  let labelE;
+  labelE = createP();
+  labelE.position(160, 585);
+  labelE.html('Sub Hit');
 }
 
 const sequence = (time, beatIndex) => {
@@ -169,8 +234,8 @@ const sequence = (time, beatIndex) => {
 
 const drawPlayhead = (beatIndex) => {
   stroke('limegreen');
-  strokeWeight(4)
-  fill(0, 255, 10, 30);
+  strokeWeight(6)
+  fill(0, 255, 10, 65);
   rect((beatIndex - 1) * cellWidth, 0, cellWidth, height);
 }
 
@@ -179,3 +244,4 @@ const touchStarted = () => {
     getAudioContext().loop();
   }
 }
+
