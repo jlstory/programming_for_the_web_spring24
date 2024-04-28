@@ -9,11 +9,43 @@ let cnv, playPause;
 let sPat;
 let reverb, delay, filter;
 let currentSpeed;
+let valueDisplayer;
+let font;
 let cursorPos;
+
+function preload() {
+  font = loadFont('./fonts/DIGITEK.TTF');
+}
 
 function setup() {
   cnv = createCanvas(1280, 385);
   cnv.mousePressed(canvasPressed);
+  textFont(font)
+  //create BPM Display
+  valueDisplayer = createElement('h3');
+  valueDisplayer.position(width - width / 2 , height + 400);
+  //labels
+  textAlign(LEFT);
+  let labelA;
+  labelA = createP();
+  labelA.position(160, 326);
+  labelA.html('Synth Cymbal');
+  let labelB;
+  labelB = createP();
+  labelB.position(160, 395);
+  labelB.html('High-Hat');
+  let labelC;
+  labelC = createP();
+  labelC.position(160, 465);
+  labelC.html('Snare Drum');
+  let labelD;
+  labelD = createP();
+  labelD.position(160, 534);
+  labelD.html('Kick Drum');
+  let labelE;
+  labelE = createP();
+  labelE.position(160, 605);
+  labelE.html('Sub Hit');
 
   beatLength = 16;
   cellWidth = width / beatLength;
@@ -198,32 +230,9 @@ const drawMatrix = () => {
       rect(i * cellWidth + 0.13 * cellWidth, height * 4.92 / 6, 60);
     }
   }
-  let valueDisplayer;
-  valueDisplayer = createP();
-  valueDisplayer.position(width - width / 2 + 50, height + 400);
+
   console.log(bpmCTRL.value);
   valueDisplayer.html('BPM: ' + bpmCTRL.value());
-  //labels
-  let labelA;
-  labelA = createP();
-  labelA.position(160, 285);
-  labelA.html('Synth Cymbal');
-  let labelB;
-  labelB = createP();
-  labelB.position(160, 360);
-  labelB.html('High-Hat');
-  let labelC;
-  labelC = createP();
-  labelC.position(160, 435);
-  labelC.html('Snare Drum');
-  let labelD;
-  labelD = createP();
-  labelD.position(160, 510);
-  labelD.html('Kick Drum');
-  let labelE;
-  labelE = createP();
-  labelE.position(160, 585);
-  labelE.html('Sub Hit');
 }
 
 const sequence = (time, beatIndex) => {
