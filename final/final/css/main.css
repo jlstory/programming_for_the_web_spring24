@@ -47,6 +47,7 @@ h1 {
   width: 1280px;
   justify-content: center !important;
   background: white;
+  color: limegreen !important;
 }
 
 .p5Canvas {
@@ -102,11 +103,17 @@ p {
   p {
     display: none !important;
   }
+  h3 {
+    left: calc(100vw - 53%) !important;
+  }
 }
 
 @media (max-width: 1725px) {
   p {
     left: calc(100vw - 99.2vw) !important;
+  }
+  h3 {
+    left: calc(100vw - 52%) !important;
   }
 }
 
