@@ -51,8 +51,6 @@ function setup() {
   cellWidth = width / beatLength;
   cursorPos = 0;
 // samples
-let kitA = [oh, hh, snare, bass, sub];
-
   console.log("preload");
   soundFormats('wav');
   oh = loadSound('./sounds/hh_open.wav', () => {});
