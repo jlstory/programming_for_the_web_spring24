@@ -98,19 +98,19 @@ function setup() {
   for (let r = 0; r < 1; r++);
   polySynth = new p5.PolySynth();
   // polySynth.setADSR(a, d, s, r);
-  polySynth.setADSR(0.5, 1, 1, 0.1);
+  polySynth.setADSR(0.75, 1, 1, 0.1);
   function touchStarted() {
     for (let i = 0; i < numKeysWhite; i++) {
       whiteKeys[i].played();
       userStartAudio();
     }
   }
-  // polySynth.disconnect();
+  polySynth.disconnect();
   reverb = new p5.Reverb();
   reverb.process(polySynth, 6, 0.1);
   // reverb.amp(revSlider.value());
   //  Volume Control
-  volSlider = createSlider(0, 1, 0.5, 0);
+  volSlider = createSlider(0, 0.5, 0.5, 0);
   volSlider.position(500, 240);
   textSize(20);
   fill('dodgerblue');
@@ -123,7 +123,8 @@ function setup() {
   text('BASS NOTES: z - m (lower case | C-MAJOR SCALE)', 400, 225);
   fill('gray');
   text('a       w     s      r        d        f         y     g      i      h      p       j       k:A     l:W   S     R       D        F       Y     G     I      H     P       J        K       -      L     -', 25, 280);
-
+  revSlider = createSlider(0, 1, 0, 0);
+  revSlider.position(500, 300);
   // ADSR Settings
   // attackSlider = createSlider(0, 1, 0.5, 0);
   // attackSlider.position(500, 400);
@@ -146,8 +147,7 @@ function draw() {
 
   outputVolume(volSlider.value(), 0.025);
   //  Reverb Control
-  revSlider = createSlider(0, 1, 0, 0);
-  revSlider.position(500, 300);
+
   textSize(20);
   fill('dodgerblue');
   text('REVERB', 15, 83);
