@@ -1,0 +1,140 @@
+/* CSS Document */
+/* Author: Josh Story */
+@import url(../fonts/DIGITEK.TTF);
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: #101010;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: limegreen;
+  overflow-x: hidden;
+  width: 90vw;
+  margin: 100px auto;
+  padding: 0rem;
+  text-align: center;
+}
+
+h1 {
+  color: #000;
+  font-family: "DIGITEK", Helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: bolder;
+  -webkit-text-stroke: 3px dodgerblue;
+  text-decoration: underline overline !important;
+  text-decoration-color: #25e679 !important;
+  width: 1300px;
+  margin: 0 auto !important;
+  padding: 9px 0px 2px;
+}
+
+.slider {
+  display: relative !important;
+  position: inherit !important;
+  margin: 1em auto !important;
+  width: 1280px;
+  justify-content: center !important;
+  background: white;
+  color: limegreen !important;
+}
+
+.p5Canvas {
+  position: relative !important;
+  margin: 1.5em auto;
+  border: 6px outset #eee !important;
+  box-shadow: 8px 8px 28px 8px rgba(0, 0, 0, 0.6) !important;
+  padding: 1em 1.25em;
+  background: linear-gradient(120deg, #202020, #000) !important;
+}
+
+button {
+  display: block !important;
+  position: inherit !important;
+  margin: 2em auto !important;
+  padding: 8px 48px;
+  border-radius: 50px;
+  background: linear-gradient(10deg, #102020, #000) !important;
+  color: limegreen;
+  border: 3px solid limegreen;
+}
+
+button:active {
+  background: rgba(103, 255, 103, 0.723) !important;
+  color: black;
+  border: 3px solid black;
+  padding: 8px 32px;
+}
+
+h3 {
+  display: block !important;
+  position: absolute !important;
+  margin: 0 auto !important;
+  left: calc(100vw - 51.5%) !important;
+  top: 870px !important;
+}
+
+h4 {
+  color: #fff;
+}
+
+p {
+  display: block !important;
+  position: absolute !important;
+  background-color: #101010 !important;
+  border-radius: 4px;
+  padding: 5px;
+  z-index: 0;
+  left: calc(100vw - 90vw) !important;
+}
+
+/* @media (max-width: 1535px) {
+  p {
+    display: none !important;
+  }
+  h3 {
+    left: calc(100vw - 53%) !important;
+  }
+}
+
+@media (max-width: 1725px) {
+  p {
+    left: calc(100vw - 99.2vw) !important;
+  }
+  h3 {
+    left: calc(100vw - 52%) !important;
+  }
+}
+
+@media (min-width: 1726px) {
+  p {
+    left: calc(100vw - 95vw) !important;
+  }
+}
+
+@media (min-width: 2000px) {
+  p {
+    left: calc(100vw - 88vw) !important;
+  }
+}
+
+@media (min-width: 2160px) {
+  p {
+    left: calc(100vw - 85vw) !important;
+  }
+}
+
+@media (min-width: 2300px) {
+  p {
+    left: calc(100vw - 83vw) !important;
+  }
+} */
