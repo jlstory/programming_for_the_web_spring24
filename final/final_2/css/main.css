@@ -46,3 +46,10 @@ h1 {
   padding: 1em 1.25em;
   background: linear-gradient(120deg, #202020, #000) !important;
 }
+
+input {
+  position: relative !important;
+  /* margin: 1em auto !important; */
+  /* width: 1280px; */
+  justify-content: center !important;
+}

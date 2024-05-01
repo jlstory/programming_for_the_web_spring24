@@ -104,7 +104,7 @@ function setup() {
 
   //  Volume Control
   volSlider = createSlider(0, 1, 0.5, 0);
-  volSlider.position(500, 240);
+  volSlider.position(-30, -580);
   textSize(20);
   fill('dodgerblue');
   text('VOLUME', 15, 20);
@@ -119,49 +119,49 @@ function setup() {
   
   // Reverb Slider
   revSlider = createSlider(0, 1, 0, 0);
-  revSlider.position(500, 300);
+  revSlider.position(-160, -520);
 
   // ADSR Settings
-  attackSlider = createSlider(0.1, 10, 0.5, 0);
-  attackSlider.position(1390, 240);
+  attackSlider = createSlider(0.1, 15, 0.5, 0);
+  attackSlider.position(603, -580);
   textSize(20);
   fill('dodgerblue');
   text('ATTACK', 943, 20);
 
   decaySlider = createSlider(0, 1, 0.2, 0);
-  decaySlider.position(1390, 300);
+  decaySlider.position(473, -520);
   textSize(20);
   fill('dodgerblue');
   text('DECAY', 943, 83);
 
   sustainSlider = createSlider(0, 1, 0, 0);
-  sustainSlider.position(1590, 240);
+  sustainSlider.position(545, -580);
   textSize(20);
   fill('dodgerblue');
   text('SUSTAIN', 1192, 20);
 
-  releaseSlider = createSlider(0.2, 5, 0.25, 0);
-  releaseSlider.position(1590, 300);
+  releaseSlider = createSlider(0.2, 10, 0.25, 0);
+  releaseSlider.position(418, -520);
   textSize(20);
   fill('dodgerblue');
   text('RELEASE', 1190, 83);
 
   // Low Pass Filter
   lpSlider = createSlider(10, 800, 600, 0);
-  lpSlider.position(700, 240);
+  lpSlider.position(-605, -580);
   textSize(20);
   fill('dodgerblue');
   text('LOW PASS', 225, 20);
 
   lpResSlider = createSlider(0, 80, 5, 0);
-  lpResSlider.position(700, 300);
+  lpResSlider.position(-730, -520);
   textSize(20);
   fill('dodgerblue');
   text('RESONANCE', 225, 83);
 
   // Distortion 
   distAmtSlider = createSlider(0, 5, 0, 0);
-  distAmtSlider.position(500, 360);
+  distAmtSlider.position(-1063, -460);
   textSize(20);
   fill('dodgerblue');
   text('DISTORTION', 15, 150);
