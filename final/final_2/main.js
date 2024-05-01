@@ -7,15 +7,17 @@ let numKeysBlackD = 2;
 let numKeysBlackE = 3;
 let numKeysBlackG = 2;
 let volSlider;
-// let attackSlider;
-// let decaySlider;
-// let sustainSlider;
-// let releaseSlider;
-// let lowPassFilter;
-// let lpSlider;
-let reverb, delay;
+let attackSlider;
+let decaySlider;
+let sustainSlider;
+let releaseSlider;
+let lowPassFilter;
+let lpSlider;
+let lpResSlider;
+let reverb;
 let revSlider;
 let distortion; 
+let distAmtSlider;
 let whiteKeys = [];
 let blackKeysC = [];
 let blackKeysF = [];
@@ -25,17 +27,10 @@ let blackKeysG = [];
 let xKeyWhite = [];
 let xKeyBlackC = [];
 let xKeyBlackF = [];
-let xKeyBlackD = [];
-let xKeyBlackE = [];
 let xKeyBlackG = [];
 
 function setup() {
-  // userStartAudio;
   let cnv = createCanvas (1300, 600);
-  // filter
-  // lowPassFilter = new p5.lowPass();
-  // polySynth.disconnect();
-  // polySynth.connect(lowPassFilter);
   // build keyboard layout
   for (let i = 0; i <= numKeysWhite; i++) {
     let w = 1300 / numKeysWhite;
@@ -92,25 +87,23 @@ function setup() {
     blackKeysG.push(new blackKeyG(i));
     blackKeysG[i].display();
   } 
-  
-  let a, d, s, r;
-  let verb;
+
   for (let r = 0; r < 1; r++);
   polySynth = new p5.PolySynth();
-  // polySynth.setADSR(a, d, s, r);
-  polySynth.setADSR(0.75, 1, 1, 0.1);
+ 
   function touchStarted() {
     for (let i = 0; i < numKeysWhite; i++) {
       whiteKeys[i].played();
-      userStartAudio();
     }
   }
-  polySynth.disconnect();
+ 
+  //reverb, lp, distortion
   reverb = new p5.Reverb();
-  reverb.process(polySynth, 6, 0.1);
-  // reverb.amp(revSlider.value());
+  lowPassFilter = new p5.LowPass();
+  distortion = new p5.Distortion();
+
   //  Volume Control
-  volSlider = createSlider(0, 0.5, 0.5, 0);
+  volSlider = createSlider(0, 1, 0.5, 0);
   volSlider.position(500, 240);
   textSize(20);
   fill('dodgerblue');
@@ -123,46 +116,77 @@ function setup() {
   text('BASS NOTES: z - m (lower case | C-MAJOR SCALE)', 400, 225);
   fill('gray');
   text('a       w     s      r        d        f         y     g      i      h      p       j       k:A     l:W   S     R       D        F       Y     G     I      H     P       J        K       -      L     -', 25, 280);
+  
+  // Reverb Slider
   revSlider = createSlider(0, 1, 0, 0);
   revSlider.position(500, 300);
+
   // ADSR Settings
-  // attackSlider = createSlider(0, 1, 0.5, 0);
-  // attackSlider.position(500, 400);
-  // textSize(20);
-  // fill('dodgerblue');
-  // text('ATTACK', 15, 175);
+  attackSlider = createSlider(0.1, 10, 0.5, 0);
+  attackSlider.position(1390, 240);
+  textSize(20);
+  fill('dodgerblue');
+  text('ATTACK', 943, 20);
+
+  decaySlider = createSlider(0, 1, 0.2, 0);
+  decaySlider.position(1390, 300);
+  textSize(20);
+  fill('dodgerblue');
+  text('DECAY', 943, 83);
+
+  sustainSlider = createSlider(0, 1, 0, 0);
+  sustainSlider.position(1590, 240);
+  textSize(20);
+  fill('dodgerblue');
+  text('SUSTAIN', 1192, 20);
+
+  releaseSlider = createSlider(0.2, 5, 0.25, 0);
+  releaseSlider.position(1590, 300);
+  textSize(20);
+  fill('dodgerblue');
+  text('RELEASE', 1190, 83);
 
   // Low Pass Filter
-  // lpSlider = createSlider(0, 1, 0, 1);
-  // lpSlider.position(500, 400);
-  // textSize(20);
-  // fill('dodgerblue');
-  // text('LOW PASS', 15, 175);
+  lpSlider = createSlider(10, 800, 600, 0);
+  lpSlider.position(700, 240);
+  textSize(20);
+  fill('dodgerblue');
+  text('LOW PASS', 225, 20);
 
-  // distortion = new p5.Distortion(1, 'none');
-  // distortion.connect(polySynth);
+  lpResSlider = createSlider(0, 80, 5, 0);
+  lpResSlider.position(700, 300);
+  textSize(20);
+  fill('dodgerblue');
+  text('RESONANCE', 225, 83);
+
+  // Distortion 
+  distAmtSlider = createSlider(0, 5, 0, 0);
+  distAmtSlider.position(500, 360);
+  textSize(20);
+  fill('dodgerblue');
+  text('DISTORTION', 15, 150);
 }
 
 function draw() {
 
   outputVolume(volSlider.value(), 0.025);
   //  Reverb Control
-
   textSize(20);
   fill('dodgerblue');
   text('REVERB', 15, 83);
-  reverb(revSlider.value(), 0);
-  reverb.amp(revSlider.value(), 0);
-  let drywet = (0, 1);
-  reverb.drywet(revSlider.value(), 0);
-  // attack(attackSlider.value(), 0.25);
-
-  // Low Pass Slider
-  // let lpFreq = lpSlider.value();
-  // let freq = lpFreq;
-  // freq = constrain(freq, 0, 22050);
-  // filter.freq(freq);
-  // filter.res(5);
+  reverb.process(polySynth, revSlider.value(), 3);
+  reverb.connect();
+  reverb.amp(revSlider.value());
+  // ADSR Control
+  polySynth.setADSR(attackSlider.value(), decaySlider.value(), sustainSlider.value(), releaseSlider.value());
+  polySynth.connect(lowPassFilter, reverb);
+  // Filters
+  lowPassFilter.freq(lpSlider.value());
+  lowPassFilter.res(lpResSlider.value());
+  // Distortion
+  distortion.process(polySynth);
+  distortion.set(distAmtSlider.value(), '2x');
+  distortion.amp(distAmtSlider.value());
 }
 
 function keyPressed() {
@@ -295,7 +319,7 @@ function keyPressed() {
     polySynth.play('B3', 1, 0, 0.5);
   }
 }
-// Constructors
+// Constructors for Keyboard
 function whiteKey(id) {
   this.display = function() {
     stroke('black');
