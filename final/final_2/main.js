@@ -28,6 +28,7 @@ let xKeyWhite = [];
 let xKeyBlackC = [];
 let xKeyBlackF = [];
 let xKeyBlackG = [];
+let fft;
 
 function setup() {
   let cnv = createCanvas (1300, 600);
@@ -101,25 +102,26 @@ function setup() {
   reverb = new p5.Reverb();
   lowPassFilter = new p5.LowPass();
   distortion = new p5.Distortion();
+  fft = new p5.FFT();
 
   //  Volume Control
   volSlider = createSlider(0, 1, 0.5, 0);
-  volSlider.position(-30, -580);
+  volSlider.position(1060, -445);
   textSize(20);
   fill('dodgerblue');
-  text('VOLUME', 15, 20);
+  text('VOLUME', 1150, 162);
 
   // Note / Octave Labels
   textSize(20);
-  fill('lightblue');
-  text('OCTAVE 1 UP: CAPSLOCK', 500, 200);
-  text('BASS NOTES: z - m (lower case | C-MAJOR SCALE)', 400, 225);
-  fill('gray');
-  text('a       w     s      r        d        f         y     g      i      h      p       j       k:A     l:W   S     R       D        F       Y     G     I      H     P       J        K       -      L     -', 25, 280);
+  fill('aqua');
+  text('OCTAVE 1 UP: CAPSLOCK', 5, 150);
+  text('BASS NOTES: z - m (lower case | C-MAJOR SCALE)', 5, 180);
+  fill('limegreen');
+  text('a       w     s      r        d        f         y     g      i      h      p       j       k:A     l:W   S     R       D        F       Y     G     I      H     P       J        K       -      L     -', 25, 230);
   
   // Reverb Slider
   revSlider = createSlider(0, 1, 0, 0);
-  revSlider.position(-160, -520);
+  revSlider.position(275, -520);
 
   // ADSR Settings
   attackSlider = createSlider(0.1, 15, 0.5, 0);
@@ -128,19 +130,19 @@ function setup() {
   fill('dodgerblue');
   text('ATTACK', 943, 20);
 
-  decaySlider = createSlider(0, 1, 0.2, 0);
+  decaySlider = createSlider(0, 10, 5, 0);
   decaySlider.position(473, -520);
   textSize(20);
   fill('dodgerblue');
   text('DECAY', 943, 83);
 
-  sustainSlider = createSlider(0, 1, 0, 0);
+  sustainSlider = createSlider(0, 10, 5, 0);
   sustainSlider.position(545, -580);
   textSize(20);
   fill('dodgerblue');
   text('SUSTAIN', 1192, 20);
 
-  releaseSlider = createSlider(0.2, 10, 0.25, 0);
+  releaseSlider = createSlider(0.2, 15, 5, 0);
   releaseSlider.position(418, -520);
   textSize(20);
   fill('dodgerblue');
@@ -148,24 +150,26 @@ function setup() {
 
   // Low Pass Filter
   lpSlider = createSlider(10, 800, 800, 0);
-  lpSlider.position(-605, -580);
+  lpSlider.position(-150, -580);
   textSize(20);
   fill('dodgerblue');
-  text('LOW PASS', 225, 20);
+  text('LOW PASS', 695, 20);
 
   lpResSlider = createSlider(0, 80, 5, 0);
-  lpResSlider.position(-730, -520);
+  lpResSlider.position(-280, -520);
   textSize(20);
   fill('dodgerblue');
-  text('RESONANCE', 225, 83);
+  text('RESONANCE', 695, 83);
 
   // Distortion 
   distAmtSlider = createSlider(0, 5, 0, 0);
-  distAmtSlider.position(-1063, -460);
+  distAmtSlider.position(-630, -580);
   textSize(20);
   fill('dodgerblue');
-  text('DISTORTION', 15, 150);
+  text('DISTORTION', 465, 20);
 }
+
+
 
 function draw() {
 
@@ -173,7 +177,7 @@ function draw() {
   //  Reverb Control
   textSize(20);
   fill('dodgerblue');
-  text('REVERB', 15, 83);
+  text('REVERB', 465, 83);
   reverb.process(polySynth, revSlider.value(), 3);
   reverb.connect();
   reverb.amp(revSlider.value());
@@ -187,6 +191,19 @@ function draw() {
   distortion.process(polySynth);
   distortion.set(distAmtSlider.value(), '2x');
   distortion.amp(distAmtSlider.value());
+  // Frequency Analyzer
+  let waveform = fft.waveform();
+
+  fill('limegreen');
+  beginShape();
+  stroke('black')
+  stroke(1);
+  for (let w = 0; w < waveform.length; w++) {
+    let x = map(w, 0, waveform.length, 0, width / 5);
+    let y = map( waveform[w], -1, 1, 0, height / 4);
+    vertex(x, y);
+  }
+  endShape();
 }
 
 function keyPressed() {
