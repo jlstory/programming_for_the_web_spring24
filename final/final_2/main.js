@@ -147,7 +147,7 @@ function setup() {
   text('RELEASE', 1190, 83);
 
   // Low Pass Filter
-  lpSlider = createSlider(10, 800, 600, 0);
+  lpSlider = createSlider(10, 800, 800, 0);
   lpSlider.position(-605, -580);
   textSize(20);
   fill('dodgerblue');
