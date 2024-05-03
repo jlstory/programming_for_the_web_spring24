@@ -191,7 +191,7 @@ function draw() {
   distortion.process(polySynth);
   distortion.set(distAmtSlider.value(), '2x');
   distortion.amp(distAmtSlider.value());
-  // Frequency Analyzer
+  // Oscilloscope
   let waveform = fft.waveform();
 
   fill('limegreen');
